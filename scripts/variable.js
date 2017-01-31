@@ -1,0 +1,11 @@
+const URL = "http://localhost:3000/users";
+let newUser = {};
+let $form = document.querySelector('#my-form');
+let $regLogin = document.querySelector('#reg-login');
+let $regPassword = document.querySelector('#reg-password');
+let $regPassword2 = document.querySelector('#reg-password2');
+let $regEmail = document.querySelector('#reg-email');
+let $logLogin = document.querySelector('#login');
+let $logPassword = document.querySelector('#password');
+let $logRememberMe = document.querySelector('#illed-in-box');
+let $label  = document.querySelectorAll('div > label');

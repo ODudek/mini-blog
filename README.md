@@ -1,11 +1,9 @@
 #Mini blog with admin panel
 
-#Done
+#Features
 - [x] Connection with json-server
 - [x] Login form with validation
 - [x] Registration form with validation
-
-#TODO
 - [ ] Homepage
 - [ ] Admin panel 
     - Add new posts,
@@ -14,6 +12,8 @@
     - Delete comments,
     - Modify comments,
     - Change links in footer
+    - [x] Display list of users
+    - Delete user
 - [ ] Session
 - [ ] Routing
 - [ ] Comments 

@@ -1,26 +1,10 @@
-
 #my-form {
     margin: 0 auto;
     width: 50%;
     padding: 10px;
 }
 
-
-/*!* label underline focus color *!*/
-/*.input-field input:focus {*/
-    /*border-bottom: 1px solid #000;*/
-    /*box-shadow: 0 1px 0 0 #000;*/
-/*}*/
-
-/*!* valid color *!*/
-/*.input-field input.valid {*/
-    /*border-bottom: 1px solid #000;*/
-    /*box-shadow: 0 1px 0 0 #000;*/
-/*}*/
-
-/*!* invalid color *!*/
-/*.input-field input.invalid {*/
-    /*border-bottom: 1px solid #000;*/
-    /*box-shadow: 0 1px 0 0 #000;*/
-/*}*/
-
+#user-table {
+    width: 40%;
+    float: right;
+}

@@ -4,11 +4,11 @@ json = function () {
         url: URL,
         dataType: "json",
         success(arg) {
-            loginVerification(arg);
-            passwordVerification(arg);
+            buildTable(arg);
         },
-        error(error){
-            console.log(error);
+        error(er){
+            console.log(er);
+            $form.innerHTML = 'nie udalo zaladowac sie jsona';
         },
         contentType: "application/json"
     });

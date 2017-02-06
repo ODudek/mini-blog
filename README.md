@@ -14,7 +14,7 @@
     - Change links in footer
     - [x] Display list of users
     - Delete user
-- [ ] Session
+- [x] Session
 - [ ] Routing
 - [ ] Comments 
     - Delete,

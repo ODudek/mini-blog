@@ -8,5 +8,5 @@ let $regEmail = document.querySelector('#reg-email');
 let $logLogin = document.querySelector('#login');
 let $logPassword = document.querySelector('#password');
 let $logRememberMe = document.querySelector('#illed-in-box');
-let $label  = document.querySelectorAll('div > label');
+let $label = document.querySelectorAll('div > label');
 let error = '';

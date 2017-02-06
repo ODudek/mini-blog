@@ -1,8 +1,12 @@
+if (checkSession()) {
+    window.location.href = "index.html";
+}
+
 let $loginForm = document.getElementById('my-form');
 
 $loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    json();
+    getLoginJson();
 });
 
 function getObjects(obj, key, val) {
@@ -29,6 +33,7 @@ function validation(user, password) {
         invalidStyle();
     } else {
         validStyle();
+        createSession(user);
         setTimeout(function () {
             window.location.href = "index.html";
         }, 500)
@@ -49,5 +54,21 @@ function invalidStyle() {
     $label[1].removeAttribute('data-error');
     $label[1].setAttribute('data-error', 'Login or password is not correct!');
     $logPassword.setAttribute('class', 'invalid');
+}
+
+function getLoginJson() {
+    $.ajax({
+        type: "GET",
+        url: URL,
+        dataType: "json",
+        success(arg) {
+            getObjects(arg, 'user', $logLogin.value);
+        },
+        error(er){
+            console.log(er);
+            $form.innerHTML = 'nie udalo zaladowac sie jsona';
+        },
+        contentType: "application/json"
+    });
 }
 

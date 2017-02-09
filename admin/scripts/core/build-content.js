@@ -1,5 +1,4 @@
 let columns = 3;
-let menuColumns = 2;
 let tableText = [
     'Id', 'Login', 'Email'
 ];
@@ -14,7 +13,6 @@ function buildTable(arg) {
     let $tbody = document.createElement('tbody');
     $table.appendChild($tbody);
     displayTable($thead, arg, $tbody);
-
 }
 
 function displayTable(thead, arg, tbody) {
@@ -33,7 +31,7 @@ function displayTable(thead, arg, tbody) {
                     $td.innerHTML = arg[i].id;
                     break;
                 case 1:
-                    $td.innerHTML = arg[i].user;
+                    $td.innerHTML = arg[i].login;
                     break;
                 case 2:
                     $td.innerHTML = arg[i].email;
@@ -46,54 +44,32 @@ function displayTable(thead, arg, tbody) {
     }
 }
 
-function buildAndDisplayUserDetails() {
+function buildAndDisplayUserDetails(authorizeUser) {
     let imageSrc = 'http://materializecss.com/images/yuna.jpg';
     let $li = document.querySelector('ul > li > div');
-    let $a1 = document.createElement('a');
-    $a1.setAttribute('href', '#!' + localStorage.login);
-    $li.appendChild($a1);
-    let $img = document.createElement('img');
-    $img.setAttribute('class', 'circle');
-    $img.setAttribute('src', imageSrc);
-    $a1.appendChild($img);
-    let $a2 = document.createElement('a');
-    $a2.setAttribute('href', '#!' + localStorage.login);
-    $li.appendChild($a2);
-    let $span = document.createElement('span');
-    $span.setAttribute('id', 'admin-panel-login');
-    $span.setAttribute('class', 'white-text name');
-    $span.innerHTML = localStorage.login;
-    $a2.appendChild($span);
+    let template = `<a href="#${authorizeUser.login}">
+                    <img src="${imageSrc}" alt="image" class="circle">
+                    </a>
+                    <a href="#${authorizeUser.login}">
+                    <span id="admin-panel-login" class="white-text name">${authorizeUser.login}</span>
+                    </a>`;
+    $li.innerHTML += template;
 }
 
 function buildAndDisplayMenu() {
     let $ul = document.querySelector('ul');
-    for (let i = 1; i <= menuColumns; i++) {
-        let $li = document.createElement('li');
-        $ul.appendChild($li);
-        let $a = document.createElement('a');
-        $a.setAttribute('href', '#!');
-        $a.innerHTML = i + ' Sidebar Link';
-        $li.appendChild($a);
-    }
+    let template = `<li><a href="#!">Log out</a></li>`;
+    $ul.innerHTML += template;
+    let $aHandler = document.querySelector('li > a');
+    $aHandler.addEventListener('click', logOut);
 }
 
-function getDateFromJson() {
-    $.ajax({
-        type: "GET",
-        url: URL,
-        dataType: "json",
-        success(arg) {
-            buildTable(arg);
-            buildAndDisplayUserDetails();
-            buildAndDisplayMenu();
-        },
-        error(er){
-            console.log(er);
-            $form.innerHTML = 'nie udalo zaladowac sie jsona';
-        },
-        contentType: "application/json"
-    });
+function logOut() {
+    clearSession();
+    window.location.href = "..app/index.html";
 }
 
-getDateFromJson();
+function buildUserProfile(user) {
+    let $content = document.querySelector('#content');
+    $content.innerHTML += `<h1>User panel</h1>`
+}

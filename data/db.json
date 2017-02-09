@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "login": "123",
+      "password": "123",
+      "email": "12@wp.pl"
+    },
+    {
+      "id": 2,
+      "login": "wq",
+      "password": "qw",
+      "email": "w@wp.pl"
+    },
+    {
+      "id": 3,
+      "login": "wq",
+      "password": "qw",
+      "email": "w@wp.pl"
+    },
+    {
+      "id": 4,
+      "login": "QuakeR",
+      "password": "123",
+      "email": "w@wp.pl"
+    }
+  ]
+}

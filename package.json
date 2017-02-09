@@ -1,10 +1,9 @@
 {
-  "name": "json_form",
+  "name": "json-form",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:json-server": "json-server data/db.json"
   },
   "author": "",
   "license": "ISC",
